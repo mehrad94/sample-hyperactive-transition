@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+h1{
+  text-transform: uppercase;
+  font-size: 5rem;
+  font-weight: 500;
+  line-height: 0.9;
+  color: aliceblue;
+  text-align: center ;
+  width: 100%;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+a{
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+nav{
+  position: fixed;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.25rem;
+  z-index: 2;
+}
+nav a{
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.2rem;
+  transition: transform 200ms ease-in-out;
+  background-color: antiquewhite;
+  font-weight: bold;
+}
+
+section{
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.section-bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.section-header{
+  z-index: 2;
+}
+.transition-grid{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+  overflow: hidden;
+}
+.transition-block{
+  position: absolute;
+  background-color: rgb(82, 82, 82);
+  opacity: 0;
 }
