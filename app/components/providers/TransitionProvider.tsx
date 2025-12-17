@@ -25,7 +25,7 @@ const TransitionProvider = ({ children }: { children: ReactNode }) => {
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
         const block = document.createElement("div");
-        block.className = "transition-block";
+        block.className = "transition-block absolute bg-[rgb(82,82,82)] opacity-0";
         block.style.width = `${BLOCK_SIZE}px`;
         block.style.height = `${BLOCK_SIZE}px`;
         block.style.left = `${col * BLOCK_SIZE}px`;
@@ -71,7 +71,10 @@ const TransitionProvider = ({ children }: { children: ReactNode }) => {
       }}
     >
       <>
-        <div ref={transitionGridRef} className="transition-grid" />
+        <div
+          ref={transitionGridRef}
+          className="transition-grid fixed top-0 left-0 w-full h-full pointer-events-none z-100 overflow-hidden"
+        />
         {children}
       </>
     </TransitionRouter>
