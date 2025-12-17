@@ -1,11 +1,10 @@
 import Image from "next/image";
-import React from "react";
 
 const Members = () => {
   return (
-    <section className="relative w-screen h-screen">
-      <div className="section-bg">
-        <Image width={3000} height={2000} src={"/img/accountant.webp"} alt="accountant" />
+    <section className="relative w-full h-screen flex justify-center items-center overflow-hidden">
+      <div className="absolute w-full h-full z-0">
+        <Image className="object-cover" src={"/img/accountant.webp"} alt="accountant" fill/>
       </div>
     </section>
   );
